@@ -6,7 +6,7 @@ fig = plt.figure()
 for i in lista:
   plt.scatter(i[0],i[1])
 plt.show()
-k = 10
+k = 3
 lista_cluster = kmeans.kmeans(lista ,kmeans.choosePlus(k,lista))
 hex = '0123456789abcdefABCDEF'
 colors = ["#"+"".join([random.choice(hex) for x in range(6)]) for i in range(k)]
