@@ -1,0 +1,18 @@
+import kmeans
+import random
+import matplotlib.pyplot as plt
+lista = [[random.randint(0,100),random.randint(0,100)] for i in range(30)]
+fig = plt.figure()
+for i in lista:
+  plt.scatter(i[0],i[1])
+plt.show()
+k = 10
+lista_cluster = kmeans.kmeans(lista ,kmeans.choosePlus(k,lista))
+hex = '0123456789abcdefABCDEF'
+colors = ["#"+"".join([random.choice(hex) for x in range(6)]) for i in range(k)]
+fig = plt.figure()
+
+
+for i in lista_cluster:
+  plt.scatter(i[0][0], i[0][1], color=colors[i[1]])
+plt.show()
